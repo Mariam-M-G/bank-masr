@@ -1,0 +1,103 @@
+import sys
+from tkinter import *
+from tkinter import messagebox
+
+window=Tk()
+window.title('Bank Misr_Plan Yor Loan Application')
+window.geometry('500x500+300+200')
+logo=PhotoImage(file='banque-misr-logo-FFB8733070-seeklogo.com.png')
+l_image=Label(window,image=logo)
+l_image.pack(pady=30)
+
+def compute():
+    a = float(e2.get())
+    y = float(e3.get())
+
+    if y == 1:
+        interestOneYear = a * 13.76 / 100
+        totalInterest = interestOneYear * y
+        totalLoan = totalInterest + a
+        PayPerMonth = totalLoan / (y * 12)
+        output = "Interest in one year: "+str(interestOneYear)+"\nTotal interest: "+str(totalInterest)
+        +"\n Total loan: "+str(totalLoan)+"\nAmount you will pay in month: "+str(PayPerMonth)
+        out_put.config(text=output)
+    elif y == 2:
+        interestOneYear = a * 13.89 / 100
+        totalInterest = interestOneYear * y
+        totalLoan = totalInterest + a
+        PayPerMonth = totalLoan / (y * 12)
+        output = "Interest in one year: "+str(interestOneYear)+"\nTotal interest: "+str(totalInterest)
+        +"\n Total loan: "+str(totalLoan)+"\nAmount you will pay in month: "+str(PayPerMonth)
+        out_put.config(text=output)
+    elif y == 3:
+        interestOneYear = a * 14.06 / 100
+        totalInterest = interestOneYear * y
+        totalLoan = totalInterest + a
+        PayPerMonth = totalLoan / (y * 12)
+        output = "Interest in one year: "+str(interestOneYear)+"\nTotal interest: "+str(totalInterest)
+        +"\n Total loan: "+str(totalLoan)+"\nAmount you will pay in month: "+str(PayPerMonth)
+        out_put.config(text=output)
+    elif y == 4:
+        interestOneYear = a * 14.44 / 100
+        totalInterest = interestOneYear * y
+        totalLoan = totalInterest + a
+        PayPerMonth = totalLoan / (y * 12)
+        output = "Interest in one year: "+str(interestOneYear)+"\nTotal interest: "+str(totalInterest)
+        +"\n Total loan: "+str(totalLoan)+"\nAmount you will pay in month: "+str(PayPerMonth)
+        out_put.config(text=output)
+    elif y == 5:
+        interestOneYear = a * 14.87 / 100
+        totalInterest = interestOneYear * y
+        totalLoan = totalInterest + a
+        PayPerMonth = totalLoan / (y * 12)
+        output = "Interest in one year: "+str(interestOneYear)+"\nTotal interest: "+str(totalInterest)
+        +"\n Total loan: "+str(totalLoan)+"\nAmount you will pay in month: "+str(PayPerMonth)
+        out_put.config(text=output)
+    elif y == 6:
+        interestOneYear = a * 15.41 / 100
+        totalInterest = interestOneYear * y
+        totalLoan = totalInterest + a
+        PayPerMonth = totalLoan / (y * 12)
+        output = "Interest in one year: "+str(interestOneYear)+"\nTotal interest: "+str(totalInterest)
+        +"\n Total loan: "+str(totalLoan)+"\nAmount you will pay in month: "+str(PayPerMonth)
+        out_put.config(text=output)
+    elif y == 7:
+        interestOneYear = a * 15.71 / 100
+        totalInterest = interestOneYear * y
+        totalLoan = totalInterest + a
+        PayPerMonth = totalLoan / (y * 12)
+        output = "Interest in one year: "+str(interestOneYear)+"\nTotal interest: "+str(totalInterest)
+        +"\n Total loan: "+str(totalLoan)+"\nAmount you will pay in month: "+str(PayPerMonth)
+        out_put.config(text=output)
+    elif y > 7:
+        messagebox.showerror("Error", "Invalid Loan Year.Please enter from 1 to 7 years")
+
+def clear():
+    e2.delete(0, 'end')
+    e3.delete(0, 'end')
+    output.config(text='')
+
+def Exit():
+    sys.exit()
+
+l1=Label(window,text='Please,Enter your jop:',bg='light blue')
+l1.pack()
+e1=Entry(window)
+e1.pack()
+l2=Label(window,text='Please,Enter the loan amount:',bg='light blue')
+l2.pack()
+e2=Entry(window)
+e2.pack()
+l3=Label(window,text='Please,Enter the number of years to pay the loan:',bg='light blue')
+l3.pack()
+e3=Entry(window)
+e3.pack()
+B1 = Button(window, text="compute", command=compute)
+B1.pack()
+B2 = Button(window, text="clear", command=clear)
+B2.pack()
+B3 = Button(window, text="EXIT", command=Exit)
+B3.pack(side=BOTTOM)
+out_put=Label(window)
+out_put.pack()
+window.mainloop()
